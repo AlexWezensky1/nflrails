@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @combine %>
+
+<div>
+  <%= link_to "Edit this combine", edit_combine_path(@combine) %> |
+  <%= link_to "Back to combines", combines_path %>
+
+  <%= button_to "Destroy this combine", @combine, method: :delete %>
+</div>

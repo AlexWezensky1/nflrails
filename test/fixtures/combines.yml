@@ -1,0 +1,41 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  season: 1
+  draft_year: 1
+  draft_team: MyString
+  draft_round: 1
+  draft_ovr: 1
+  pfr_id: MyString
+  cfb_id: MyString
+  player_name: MyString
+  pos: MyString
+  school: MyString
+  ht: MyString
+  wt: 1
+  forty: 1.5
+  bench: 1
+  vertical: 1.5
+  broad_jump: 1
+  cone: 1.5
+  shuttle: 1.5
+
+two:
+  season: 1
+  draft_year: 1
+  draft_team: MyString
+  draft_round: 1
+  draft_ovr: 1
+  pfr_id: MyString
+  cfb_id: MyString
+  player_name: MyString
+  pos: MyString
+  school: MyString
+  ht: MyString
+  wt: 1
+  forty: 1.5
+  bench: 1
+  vertical: 1.5
+  broad_jump: 1
+  cone: 1.5
+  shuttle: 1.5

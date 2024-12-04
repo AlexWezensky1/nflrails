@@ -1,0 +1,107 @@
+<%= form_with(model: combine) do |form| %>
+  <% if combine.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(combine.errors.count, "error") %> prohibited this combine from being saved:</h2>
+
+      <ul>
+        <% combine.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :season, style: "display: block" %>
+    <%= form.number_field :season %>
+  </div>
+
+  <div>
+    <%= form.label :draft_year, style: "display: block" %>
+    <%= form.number_field :draft_year %>
+  </div>
+
+  <div>
+    <%= form.label :draft_team, style: "display: block" %>
+    <%= form.text_field :draft_team %>
+  </div>
+
+  <div>
+    <%= form.label :draft_round, style: "display: block" %>
+    <%= form.number_field :draft_round %>
+  </div>
+
+  <div>
+    <%= form.label :draft_ovr, style: "display: block" %>
+    <%= form.number_field :draft_ovr %>
+  </div>
+
+  <div>
+    <%= form.label :pfr_id, style: "display: block" %>
+    <%= form.text_field :pfr_id %>
+  </div>
+
+  <div>
+    <%= form.label :cfb_id, style: "display: block" %>
+    <%= form.text_field :cfb_id %>
+  </div>
+
+  <div>
+    <%= form.label :player_name, style: "display: block" %>
+    <%= form.text_field :player_name %>
+  </div>
+
+  <div>
+    <%= form.label :pos, style: "display: block" %>
+    <%= form.text_field :pos %>
+  </div>
+
+  <div>
+    <%= form.label :school, style: "display: block" %>
+    <%= form.text_field :school %>
+  </div>
+
+  <div>
+    <%= form.label :ht, style: "display: block" %>
+    <%= form.text_field :ht %>
+  </div>
+
+  <div>
+    <%= form.label :wt, style: "display: block" %>
+    <%= form.number_field :wt %>
+  </div>
+
+  <div>
+    <%= form.label :forty, style: "display: block" %>
+    <%= form.text_field :forty %>
+  </div>
+
+  <div>
+    <%= form.label :bench, style: "display: block" %>
+    <%= form.number_field :bench %>
+  </div>
+
+  <div>
+    <%= form.label :vertical, style: "display: block" %>
+    <%= form.text_field :vertical %>
+  </div>
+
+  <div>
+    <%= form.label :broad_jump, style: "display: block" %>
+    <%= form.number_field :broad_jump %>
+  </div>
+
+  <div>
+    <%= form.label :cone, style: "display: block" %>
+    <%= form.text_field :cone %>
+  </div>
+
+  <div>
+    <%= form.label :shuttle, style: "display: block" %>
+    <%= form.text_field :shuttle %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

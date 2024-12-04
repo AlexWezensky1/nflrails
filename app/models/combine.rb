@@ -1,0 +1,2 @@
+class Combine < ApplicationRecord
+end
