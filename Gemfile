@@ -66,3 +66,4 @@ end
 group :production do
   gem 'pg', '~> 1.5', '>= 1.5.9'
 end
+gem "tailwindcss-rails", "~> 3.0"
