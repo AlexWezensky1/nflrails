@@ -1,16 +1,68 @@
-<p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Combines" %>
 
-<h1>Combines</h1>
+<%= search_form_for @q do |f| %>
+  <%= f.label :player_name_cont %>
+  <%= f.search_field :player_name_cont %>
+  <%= f.submit %>
+<% end %>
 
-<div id="combines">
-  <% @combines.each do |combine| %>
-    <%= render combine %>
-    <p>
-      <%= link_to "Show this combine", combine %>
-    </p>
-  <% end %>
+<div class="flex flex-col">
+  <div class="-m-1.5 overflow-x-auto">
+    <div class="p-1.5 w-full inline-block align-middle">
+      <div class="overflow-hidden">
+        <table class="w-full text-left divide-y divide-gray-200">
+          <thead class="text-xs text-gray-700 uppercase bg-blue-600">
+            <tr>
+              <th scope="col" class="px-6 py-3 text-start text-xs font-medium uppercase dark:text-neutral-500">Player Name</th>
+              <th scope="col" class="px-6 py-3 text-start text-xs font-medium uppercase dark:text-neutral-500">Season</th>
+              <th scope="col" class="px-6 py-3 text-start text-xs font-medium uppercase dark:text-neutral-500">Draft Year</th>
+              <th scope="col" class="px-6 py-3 text-start text-xs font-medium uppercase dark:text-neutral-500">Draft Team</th>
+              <th scope="col" class="px-6 py-3 text-start text-xs font-medium uppercase dark:text-neutral-500">Draft Round</th>
+              <th scope="col" class="px-6 py-3 text-start text-xs font-medium uppercase dark:text-neutral-500">Overall Draft Placement</th>
+              <th scope="col" class="px-6 py-3 text-start text-xs font-medium uppercase dark:text-neutral-500">PFR ID</th>
+              <th scope="col" class="px-6 py-3 text-start text-xs font-medium uppercase dark:text-neutral-500">CFB ID</th>
+              <th scope="col" class="px-6 py-3 text-start text-xs font-medium uppercase dark:text-neutral-500">Position</th>
+              <th scope="col" class="px-6 py-3 text-start text-xs font-medium uppercase dark:text-neutral-500">School</th>
+              <!--<th scope="col" class="px-6 py-3 text-start text-xs font-medium uppercase dark:text-neutral-500">Height</th>-->
+              <th scope="col" class="px-6 py-3 text-start text-xs font-medium uppercase dark:text-neutral-500">Weight</th>
+              <th scope="col" class="px-6 py-3 text-start text-xs font-medium uppercase dark:text-neutral-500">40 Yard Dash</th>
+              <th scope="col" class="px-6 py-3 text-start text-xs font-medium uppercase dark:text-neutral-500">Bench Press</th>
+              <th scope="col" class="px-6 py-3 text-start text-xs font-medium uppercase dark:text-neutral-500">Vertical</th>
+              <th scope="col" class="px-6 py-3 text-start text-xs font-medium uppercase dark:text-neutral-500">Broad Jump</th>
+              <th scope="col" class="px-6 py-3 text-start text-xs font-medium uppercase dark:text-neutral-500">Cone</th>
+              <th scope="col" class="px-6 py-3 text-start text-xs font-medium uppercase dark:text-neutral-500">Shuttle</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @combines.take(50).each do |combine| %>
+              <tr class="odd:bg-white even:bg-gray-100">
+                <td class="px-6 whitespace-nowrap text-sm font-medium"><%= combine.player_name %></td>
+                <td class="px-6 whitespace-nowrap text-sm font-medium"><%= combine.season %></td>
+                <td class="px-6 whitespace-nowrap text-sm font-medium"><%= combine.draft_year %></td>
+                <td class="px-6 whitespace-nowrap text-sm font-medium"><%= combine.draft_team %></td>
+                <td class="px-6 whitespace-nowrap text-sm font-medium"><%= combine.draft_round %></td>
+                <td class="px-6 whitespace-nowrap text-sm font-medium"><%= combine.draft_ovr %></td>
+                <td class="px-6 whitespace-nowrap text-sm font-medium"><%= combine.pfr_id %></td>
+                <td class="px-6 whitespace-nowrap text-sm font-medium"><%= combine.cfb_id %></td>
+                <td class="px-6 whitespace-nowrap text-sm font-medium"><%= combine.pos %></td>
+                <td class="px-6 whitespace-nowrap text-sm font-medium"><%= combine.school %></td>
+                <td class="px-6 whitespace-nowrap text-sm font-medium"><%= combine.wt %></td>
+                <td class="px-6 whitespace-nowrap text-sm font-medium"><%= combine.forty %></td>
+                <td class="px-6 whitespace-nowrap text-sm font-medium"><%= combine.bench %></td>
+                <td class="px-6 whitespace-nowrap text-sm font-medium"><%= combine.vertical %></td>
+                <td class="px-6 whitespace-nowrap text-sm font-medium"><%= combine.broad_jump %></td>
+                <td class="px-6 whitespace-nowrap text-sm font-medium"><%= combine.cone %></td>
+                <td class="px-6 whitespace-nowrap text-sm font-medium"><%= combine.shuttle %></td>                
+                <!--<td><%= combine.ht %></td>-->
+                <td><button type="button" class="text-black bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"><%= link_to "Show this entry", combine %></button></td>
+              </tr>
+              <% render combine %>
+            <% end %>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New combine", new_combine_path %>
