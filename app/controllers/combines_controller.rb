@@ -8,12 +8,12 @@ class CombinesController < ApplicationController
     @combines = @q.result(distinct: true)
   end
 
-  #require 'csv'    
-  #csv_text = File.read("tmp/combine.csv")
-  #csv = CSV.parse(csv_text, :headers => true)
-  #csv.each do |row|
-    #Combine.create!(row.to_hash)
-  #end 
+  require 'csv'    
+  csv_text = File.read("tmp/combine.csv")
+  csv = CSV.parse(csv_text, :headers => true)
+  csv.each do |row|
+    Combine.create!(row.to_hash)
+  end 
 
   # GET /combines/1 or /combines/1.json
   def show
