@@ -57,6 +57,8 @@ GEM
       activerecord (>= 3.1)
     activerecord-import (1.8.1)
       activerecord (>= 4.2)
+    activerecord-postgresql-adapter (0.0.1)
+      pg
     activestorage (8.0.0)
       actionpack (= 8.0.0)
       activejob (= 8.0.0)
@@ -354,6 +356,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord-copy
   activerecord-import
+  activerecord-postgresql-adapter
   bootsnap
   brakeman
   capybara
