@@ -66,7 +66,7 @@ end
 group :production do
   gem 'pg', '~> 1.5', '>= 1.5.9'
 end
-gem "tailwindcss-rails", "~> 3.0"
+gem "tailwindcss-rails", "~> 3.3"
 gem 'postgres-copy'
 gem 'activerecord-import'
 gem 'stringio', '~> 3.1.2'
